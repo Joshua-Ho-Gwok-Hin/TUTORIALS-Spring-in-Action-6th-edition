@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>sia</groupId>
 		<artifactId>taco-cloud-r2dbc-parent</artifactId>
-		<version>0.0.12-SNAPSHOT</version>
+		<version>3.2.2</version>
 	</parent>
 
 	<name>tacocloud-ui</name>
@@ -93,3 +93,4 @@
     </plugins>
   </build>
 </project>
+

@@ -1,0 +1,11 @@
+{
+  "name": "spring-tutorial---spring-in-action",
+  "version": "1.0.0",
+  "description": "This repo will hold the sample code from [Spring in Action, 6th edition](https://www.manning.com/books/spring-in-action-sixth-edition).",
+  "main": "setbootversion.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
