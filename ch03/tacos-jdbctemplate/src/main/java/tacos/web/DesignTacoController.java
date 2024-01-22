@@ -3,7 +3,7 @@ package tacos.web;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

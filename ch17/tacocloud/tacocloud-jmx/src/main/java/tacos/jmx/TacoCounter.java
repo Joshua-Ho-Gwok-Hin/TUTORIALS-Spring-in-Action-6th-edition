@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.jmx.export.notification.NotificationPublisher;
 import org.springframework.jmx.export.notification.NotificationPublisherAware;
-import javax.management.Notification;
+import jakarta.management.Notification;
 
 import tacos.Taco;
 import tacos.data.TacoRepository;

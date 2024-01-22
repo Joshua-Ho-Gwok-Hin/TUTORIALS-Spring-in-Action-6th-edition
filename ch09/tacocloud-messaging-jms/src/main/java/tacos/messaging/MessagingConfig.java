@@ -3,7 +3,7 @@ package tacos.messaging;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.jms.Destination;
+import jakarta.jms.Destination;
 
 import org.apache.activemq.artemis.jms.client.ActiveMQQueue;
 import org.springframework.context.annotation.Bean;
