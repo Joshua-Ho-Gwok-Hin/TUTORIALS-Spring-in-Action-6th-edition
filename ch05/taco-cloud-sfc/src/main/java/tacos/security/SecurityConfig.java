@@ -22,6 +22,23 @@ import tacos.data.UserRepository;
 
 @Configuration
 public class SecurityConfig {
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests(authorise -> authorise
+                        .requestMatchers("/design", "/orders")
+                        .hasRole("USER")
+                        .anyRequest().permitAll()
+                )
+                .formLogin(loginConfigurer -> loginConfigurer.loginPage("/login"))
+                .logout(logoutConfigurer -> logoutConfigurer.logoutSuccessUrl("/"))
+                // Make H2-Console non-secured; for debug purposes
+                .csrf(csrfConfigurer -> csrfConfigurer.ignoringRequestMatchers("/h2-console/**"))
+                // Allow pages to be loaded in frames from the same origin; needed for H2-Console
+                .headers(headerConfigurer -> headerConfigurer
+                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin))
+                .build();
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -40,23 +57,6 @@ public class SecurityConfig {
         };
     }
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http
-                .authorizeHttpRequests(authorise -> authorise
-                        .requestMatchers("/design", "/orders")
-                        .hasRole("USER")
-                        .anyRequest().permitAll()
-                )
-                .formLogin(loginConfigurer -> loginConfigurer.loginPage("/login"))
-                .logout(logoutConfigurer -> logoutConfigurer.logoutSuccessUrl("/"))
-                // Make H2-Console non-secured; for debug purposes
-                .csrf(csrfConfigurer -> csrfConfigurer.ignoringRequestMatchers("/h2-console/**"))
-                // Allow pages to be loaded in frames from the same origin; needed for H2-Console
-                .headers(headerConfigurer -> headerConfigurer
-                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin))
-                .build();
-    }
 
 //    Original SFC code
 //    @Bean
