@@ -10,6 +10,8 @@ Java Development Kit 21
 - ch01/taco-cloud
 - ch02/taco-cloud
 - ch03/tacos-sd-jpa
+- ch05/taco-cloud-sfc
+- ch05/taco-cloud
 
 ### With error(s):
 
@@ -17,8 +19,6 @@ Java Development Kit 21
 - ch03/tacos-sd-jdbc
 - ch04/tacos-sd-cassandra
 - ch04/tacos-sd-mongodb
-- ch05/taco-cloud
-- ch05/taco-cloud-sfc
 - ch06/taco-cloud
 
 ### Yet to open:

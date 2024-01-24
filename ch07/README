@@ -60,7 +60,7 @@ Fetch a list of tacos via the Spring Data REST-exposed API:
 $ curl localhost:8080/data-api/tacos
 ----
 
-Or just fetch all resource links fromt he Spring Data-REST exposed API:
+Or just fetch all resource links from the Spring Data-REST exposed API:
 
 ----
 $ curl localhost:8080/data-api
