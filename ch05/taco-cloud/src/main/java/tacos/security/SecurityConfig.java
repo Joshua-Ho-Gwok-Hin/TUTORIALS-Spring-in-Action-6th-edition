@@ -19,7 +19,7 @@ import tacos.data.UserRepository;
 import tacos.User;
 
 @Configuration
-//@EnableGlobalAuthentication
+@EnableGlobalAuthentication
 public class SecurityConfig {
 
     @Bean
@@ -30,12 +30,11 @@ public class SecurityConfig {
                         .anyRequest().permitAll())
                 .formLogin(loginConfigurer -> loginConfigurer
                         .loginPage("/login")
-//                        .usernameParameter("username")
-//                        .passwordParameter("password")
-//                        .loginProcessingUrl("/login")
-                        )
+                        .usernameParameter("username")
+                        .passwordParameter("password")
+                        .loginProcessingUrl("/login"))
                 .logout(logoutConfigurer -> logoutConfigurer
-//                        .logoutUrl("/logout")
+                        .logoutUrl("/logout")
                         .logoutSuccessUrl("/"))
                 .build();
     }
@@ -44,17 +43,5 @@ public class SecurityConfig {
     public PasswordEncoder encoder() {
         return new BCryptPasswordEncoder();
     }
-
-//    @Bean
-//    public UserDetailsService userDetailsService(UserRepository userRepo) {
-//        return username -> {
-//            User user = userRepo.findByUsername(username);
-//            if (user != null) {
-//                return user;
-//            }
-//            throw new UsernameNotFoundException(
-//                    "User '" + username + "' not found");
-//        };
-//    }
 
 }
